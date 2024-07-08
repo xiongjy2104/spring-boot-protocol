@@ -103,9 +103,9 @@ public class NettyHttp2Client {
     private final URL url;
     private final LinkedList<H2Response> removeStreamIdList = new LinkedList<>();
     private int connectCount = 0;
-    private int connectTimeout = 5000;
-    private int requestTimeout = 5000;
-    private int maxPendingSize = 5000;
+    private int connectTimeout = 7000;
+    private int requestTimeout = 7000;
+    private int maxPendingSize = 7000;
     private int timeoutCheckScheduleInterval = 30;
     private long beginConnectTimestamp;
     private long endConnectTimestamp;

@@ -21,8 +21,9 @@ public class HttpLazyThreadPool implements Supplier<Executor> {
         if (executor == null) {
             synchronized (this) {
                 if (executor == null) {
-                    int coreThreads = 2;
-                    int maxThreads = 200;
+//                    int coreThreads = 4;
+                    int coreThreads = 2* Runtime.getRuntime().availableProcessors();
+                    int maxThreads = 1000;
                     int keepAliveSeconds = 180;
                     int priority = Thread.NORM_PRIORITY;
                     boolean daemon = false;

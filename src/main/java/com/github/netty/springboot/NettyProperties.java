@@ -459,8 +459,8 @@ public class NettyProperties implements Serializable {
              */
             private Class<? extends Executor> executor = NettyThreadPoolExecutor.class;
             private Class<? extends RejectedExecutionHandler> rejected = HttpAbortPolicyWithReport.class;
-            private int coreThreads = 2;
-            private int maxThreads = 200;
+            private int coreThreads = 2* Runtime.getRuntime().availableProcessors();
+            private int maxThreads = 1000;
             private int keepAliveSeconds = 180;
             private int queues = 0;
             private boolean allowCoreThreadTimeOut = false;
@@ -667,11 +667,11 @@ public class NettyProperties implements Serializable {
         /**
          * RPC客户端-建立链接超时（毫秒）. 首次建立通道最大等待时间，建立后就是长连接
          */
-        private int clientConnectTimeout = 1000;
+        private int clientConnectTimeout = 3000;
         /**
          * RPC客户端-服务端响应超时（毫秒）.一次业务请求的最大等待时间
          */
-        private int clientServerResponseTimeout = 1000;
+        private int clientServerResponseTimeout = 3000;
         /**
          * RPC客户端- 心跳间隔（毫秒）. 用于监测健康的心跳包. 小于等于0则为不启用心跳
          */

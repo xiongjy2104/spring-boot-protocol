@@ -22,7 +22,7 @@ import java.util.function.Function;
  * @author wangzihaogithub 2021年2月3日15:43:40
  */
 public class NettyHttp2ClientPool extends ConcurrentHashMap<String, List<NettyHttp2Client>> implements Closeable {
-    private int connectTimeout = 5000;
+    private int connectTimeout = 7000;
     private int workerCount = 0;
     private int clientCount = 2;
     private volatile EventLoopGroup worker;
