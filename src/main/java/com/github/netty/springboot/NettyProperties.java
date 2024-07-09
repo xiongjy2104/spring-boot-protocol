@@ -460,7 +460,7 @@ public class NettyProperties implements Serializable {
             private Class<? extends Executor> executor = NettyThreadPoolExecutor.class;
             private Class<? extends RejectedExecutionHandler> rejected = HttpAbortPolicyWithReport.class;
             private int coreThreads = 2* Runtime.getRuntime().availableProcessors();
-            private int maxThreads = 1000;
+            private int maxThreads = 2000;
             private int keepAliveSeconds = 180;
             private int queues = 0;
             private boolean allowCoreThreadTimeOut = false;
@@ -853,8 +853,8 @@ public class NettyProperties implements Serializable {
              */
             private Class<? extends ExecutorService> executor = NettyThreadPoolExecutor.class;
             private Class<? extends RejectedExecutionHandler> rejected = AbortPolicyWithReport.class;
-            private int coreThreads = 2;
-            private int maxThreads = 50;
+            private int coreThreads = 2* Runtime.getRuntime().availableProcessors();
+            private int maxThreads = 200;
             private int keepAliveSeconds = 180;
             private int queues = 0;
             private boolean allowCoreThreadTimeOut = false;
