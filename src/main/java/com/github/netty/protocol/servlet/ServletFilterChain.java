@@ -7,8 +7,8 @@ import com.github.netty.core.util.Recycler;
 import com.github.netty.protocol.servlet.util.FilterMapper;
 import com.github.netty.protocol.servlet.util.ServletUtil;
 
-import javax.servlet.*;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.*;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

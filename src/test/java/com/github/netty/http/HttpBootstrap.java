@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.ServletConfigAware;
 import org.springframework.web.context.ServletContextAware;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import java.net.URL;
 
 @EnableNettyEmbedded

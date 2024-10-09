@@ -4,7 +4,7 @@ import com.github.netty.core.util.LoggerFactoryX;
 import com.github.netty.core.util.LoggerX;
 import com.github.netty.core.util.Wrapper;
 
-import javax.servlet.http.*;
+import jakarta.servlet.http.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -78,10 +78,10 @@ public class ServletHttpSession implements HttpSession, Wrapper<Session> {
         maxInactiveInterval = interval;
     }
 
-    @Override
-    public HttpSessionContext getSessionContext() {
-        return null;
-    }
+//    @Override
+//    public HttpSessionContext getSessionContext() {
+//        return null;
+//    }
 
     @Override
     public Object getAttribute(String name) {

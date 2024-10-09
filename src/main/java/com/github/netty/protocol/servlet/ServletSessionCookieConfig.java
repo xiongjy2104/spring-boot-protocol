@@ -1,6 +1,8 @@
 package com.github.netty.protocol.servlet;
 
-import javax.servlet.SessionCookieConfig;
+import jakarta.servlet.SessionCookieConfig;
+
+import java.util.Map;
 
 /**
  * Configuration of session cookies
@@ -32,6 +34,21 @@ public class ServletSessionCookieConfig implements SessionCookieConfig {
     @Override
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    @Override
+    public void setAttribute(String s, String s1) {
+
+    }
+
+    @Override
+    public String getAttribute(String s) {
+        return "";
+    }
+
+    @Override
+    public Map<String, String> getAttributes() {
+        return Map.of();
     }
 
     @Override

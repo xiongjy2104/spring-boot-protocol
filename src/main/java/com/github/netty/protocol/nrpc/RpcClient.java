@@ -81,7 +81,7 @@ public class RpcClient extends AbstractNettyClient {
     private final RpcCommandAsyncService rpcCommandAsyncService;
     private final List<RpcClientAop> nettyRpcClientAopList = new CopyOnWriteArrayList<>();
     private int idleTimeMs = 5000;
-    private int reconnectScheduledIntervalMs = 5000;
+    private int reconnectScheduledIntervalMs = 7000;
     private long connectTimeout = 1000;
     private int messageMaxLength = 10 * 1024 * 1024;
     private RpcDBService rpcDBService;

@@ -2,10 +2,10 @@ package com.github.netty.protocol.servlet;
 
 import com.github.netty.protocol.servlet.util.FilterMapper;
 
-import javax.servlet.DispatcherType;
-import javax.servlet.Filter;
-import javax.servlet.FilterConfig;
-import javax.servlet.FilterRegistration;
+import jakarta.servlet.DispatcherType;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.FilterRegistration;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 

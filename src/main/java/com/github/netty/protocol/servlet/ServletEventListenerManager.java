@@ -3,9 +3,9 @@ package com.github.netty.protocol.servlet;
 import com.github.netty.core.util.LoggerFactoryX;
 import com.github.netty.core.util.LoggerX;
 
-import javax.servlet.ServletContext;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import java.util.*;
 import java.util.function.Function;
 

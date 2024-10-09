@@ -5,9 +5,9 @@ import com.github.netty.core.util.LoggerFactoryX;
 import com.github.netty.core.util.LoggerX;
 import com.github.netty.core.util.Recyclable;
 
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.*;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -150,7 +150,7 @@ public class ServletAsyncContext implements AsyncContext, Recyclable {
     }
 
     @Override
-    public void dispatch(javax.servlet.ServletContext context, String path) {
+    public void dispatch(jakarta.servlet.ServletContext context, String path) {
         int statusInt = status.get();
         if (statusInt == STATUS_COMPLETE) {
             throw new IllegalStateException("The request associated with the AsyncContext has already completed processing.");

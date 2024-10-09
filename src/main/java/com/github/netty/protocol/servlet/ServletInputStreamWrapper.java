@@ -9,7 +9,7 @@ import io.netty.handler.codec.http.LastHttpContent;
 import io.netty.handler.codec.http.multipart.InterfaceHttpPostRequestDecoder;
 import io.netty.util.internal.PlatformDependent;
 
-import javax.servlet.ReadListener;
+import jakarta.servlet.ReadListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -39,7 +39,7 @@ import java.util.function.Supplier;
  * @author wangzihao
  * 2018/7/15/015
  */
-public class ServletInputStreamWrapper extends javax.servlet.ServletInputStream implements Wrapper<CompositeByteBuf>, Recyclable {
+public class ServletInputStreamWrapper extends jakarta.servlet.ServletInputStream implements Wrapper<CompositeByteBuf>, Recyclable {
     private static final LoggerX LOGGER = LoggerFactoryX.getLogger(ServletInputStreamWrapper.class);
     private static final FileAttribute[] EMPTY_FILE_ATTRIBUTE = {};
     private static final Set<? extends OpenOption> WRITE_OPTIONS = new HashSet<>(Arrays.asList(StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING));

@@ -13,11 +13,11 @@ import io.netty.handler.codec.http.multipart.DiskFileUpload;
 import io.netty.handler.codec.http.multipart.HttpDataFactory;
 import io.netty.util.concurrent.FastThreadLocal;
 
-import javax.servlet.*;
-import javax.servlet.descriptor.JspConfigDescriptor;
-import javax.servlet.http.HttpSessionAttributeListener;
-import javax.servlet.http.HttpSessionIdListener;
-import javax.servlet.http.HttpSessionListener;
+import jakarta.servlet.*;
+import jakarta.servlet.descriptor.JspConfigDescriptor;
+import jakarta.servlet.http.HttpSessionAttributeListener;
+import jakarta.servlet.http.HttpSessionIdListener;
+import jakarta.servlet.http.HttpSessionListener;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +36,7 @@ import java.util.function.Supplier;
  * @author wangzihao
  * 2018/7/14/014
  */
-public class ServletContext implements javax.servlet.ServletContext {
+public class ServletContext implements jakarta.servlet.ServletContext {
     public static final int MIN_FILE_SIZE_THRESHOLD = 16384;
     public static final String DEFAULT_UPLOAD_DIR = "/upload";
     public static final String SERVER_CONTAINER_SERVLET_CONTEXT_ATTRIBUTE = "javax.websocket.server.ServerContainer";
@@ -816,7 +816,7 @@ public class ServletContext implements javax.servlet.ServletContext {
     }
 
     @Override
-    public javax.servlet.ServletRegistration.Dynamic addJspFile(String jspName, String jspFile) {
+    public jakarta.servlet.ServletRegistration.Dynamic addJspFile(String jspName, String jspFile) {
         throw new UnsupportedOperationException("addJspFile");
     }
 }

@@ -12,8 +12,8 @@ import io.netty.util.Attribute;
 import io.netty.util.AttributeKey;
 import io.netty.util.internal.PlatformDependent;
 
-import javax.websocket.*;
-import javax.websocket.server.ServerEndpointConfig;
+import jakarta.websocket.*;
+import jakarta.websocket.server.ServerEndpointConfig;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;

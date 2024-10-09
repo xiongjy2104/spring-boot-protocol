@@ -10,8 +10,8 @@ import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.multipart.*;
 import io.netty.util.internal.PlatformDependent;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -1204,6 +1204,21 @@ public class ServletHttpServletRequest implements HttpServletRequest, Recyclable
             return DispatcherType.REQUEST;
         }
         return this.dispatcherType;
+    }
+
+    @Override
+    public String getRequestId() {
+        return this.getRequestedSessionId();
+    }
+
+    @Override
+    public String getProtocolRequestId() {
+        return this.getRequestedSessionId();
+    }
+
+    @Override
+    public ServletConnection getServletConnection() {
+        return null;
     }
 
     void setDispatcherType(DispatcherType dispatcherType) {

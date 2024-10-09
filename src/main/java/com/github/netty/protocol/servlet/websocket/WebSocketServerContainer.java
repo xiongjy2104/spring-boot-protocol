@@ -1,8 +1,8 @@
 package com.github.netty.protocol.servlet.websocket;
 
-import javax.websocket.*;
-import javax.websocket.server.ServerContainer;
-import javax.websocket.server.ServerEndpointConfig;
+import jakarta.websocket.*;
+import jakarta.websocket.server.ServerContainer;
+import jakarta.websocket.server.ServerEndpointConfig;
 import java.io.IOException;
 import java.net.URI;
 import java.util.*;

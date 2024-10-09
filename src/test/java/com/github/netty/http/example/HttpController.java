@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import java.io.*;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -104,45 +104,45 @@ public class HttpController {
         }
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
-
-    /**
-     * apache common-fileupload的上传测试
-     * @param request
-     * @param response
-     * @return
-     * @throws IOException
-     * @throws FileUploadException
-     */
-    @RequestMapping("/uploadForApache")
-    public ResponseEntity<String> uploadForApache(HttpServletRequest request, HttpServletResponse response) throws IOException, FileUploadException {
-        boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-        if (isMultipart) {
-            ServletFileUpload upload = new ServletFileUpload();
-            Map<String, String> params = new HashMap<>();
-            FileItemIterator iter = upload.getItemIterator(request);
-            while (iter.hasNext()) {
-                FileItemStream item = iter.next();
-                if (item.isFormField()) {
-                    String fieldName = item.getFieldName();
-                    String value = Streams.asString(item.openStream());
-                    params.put(fieldName, value);
-                    Assert.isTrue(fieldName.length() > 0, value);
-                    logger.info("uploadForApache -> field = {}, value = {}",fieldName,value);
-                } else {
-                    try (InputStream is = item.openStream()) {
-                        int available = is.available();
-                        Path copyFileTo = Paths.get(System.getProperty("user.dir"), item.getName());
-                        Files.copy(is, copyFileTo,
-                                StandardCopyOption.REPLACE_EXISTING);
-
-                        Assert.isTrue(available != -1, item.getName());
-                        logger.info("uploadForApache -> 上传至 = {}, file = {}, length = {}",copyFileTo,item.getName(),available);
-                    }
-                }
-            }
-        }
-        return new ResponseEntity<>("success", HttpStatus.OK);
-    }
+//
+//    /**
+//     * apache common-fileupload的上传测试
+//     * @param request
+//     * @param response
+//     * @return
+//     * @throws IOException
+//     * @throws FileUploadException
+//     */
+//    @RequestMapping("/uploadForApache")
+//    public ResponseEntity<String> uploadForApache(HttpServletRequest request, HttpServletResponse response) throws IOException, FileUploadException {
+//        boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+//        if (isMultipart) {
+//            ServletFileUpload upload = new ServletFileUpload();
+//            Map<String, String> params = new HashMap<>();
+//            FileItemIterator iter = upload.getItemIterator(request);
+//            while (iter.hasNext()) {
+//                FileItemStream item = iter.next();
+//                if (item.isFormField()) {
+//                    String fieldName = item.getFieldName();
+//                    String value = Streams.asString(item.openStream());
+//                    params.put(fieldName, value);
+//                    Assert.isTrue(fieldName.length() > 0, value);
+//                    logger.info("uploadForApache -> field = {}, value = {}",fieldName,value);
+//                } else {
+//                    try (InputStream is = item.openStream()) {
+//                        int available = is.available();
+//                        Path copyFileTo = Paths.get(System.getProperty("user.dir"), item.getName());
+//                        Files.copy(is, copyFileTo,
+//                                StandardCopyOption.REPLACE_EXISTING);
+//
+//                        Assert.isTrue(available != -1, item.getName());
+//                        logger.info("uploadForApache -> 上传至 = {}, file = {}, length = {}",copyFileTo,item.getName(),available);
+//                    }
+//                }
+//            }
+//        }
+//        return new ResponseEntity<>("success", HttpStatus.OK);
+//    }
 
     @RequestMapping("/downloadFile")
     public ResponseEntity<String> downloadFile(@RequestParam(required = false,defaultValue = "7") Integer size,HttpServletRequest request, HttpServletResponse response) throws Exception {

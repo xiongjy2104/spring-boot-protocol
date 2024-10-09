@@ -5,8 +5,8 @@ import com.github.netty.core.util.*;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.websocketx.*;
 
-import javax.websocket.MessageHandler;
-import javax.websocket.PongMessage;
+import jakarta.websocket.MessageHandler;
+import jakarta.websocket.PongMessage;
 import java.nio.ByteBuffer;
 import java.util.Set;
 

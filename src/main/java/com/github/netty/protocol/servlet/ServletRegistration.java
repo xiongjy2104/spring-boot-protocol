@@ -2,10 +2,10 @@ package com.github.netty.protocol.servlet;
 
 import com.github.netty.protocol.servlet.util.UrlMapper;
 
-import javax.servlet.MultipartConfigElement;
-import javax.servlet.Servlet;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletSecurityElement;
+import jakarta.servlet.MultipartConfigElement;
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletSecurityElement;
 import java.util.*;
 
 /**
@@ -14,7 +14,7 @@ import java.util.*;
  * @author wangzihao
  * 2018/7/14/014
  */
-public class ServletRegistration implements javax.servlet.ServletRegistration, javax.servlet.ServletRegistration.Dynamic {
+public class ServletRegistration implements jakarta.servlet.ServletRegistration, jakarta.servlet.ServletRegistration.Dynamic {
     private final Servlet servlet;
     private final String servletName;
     private final ServletConfig servletConfig;
@@ -62,7 +62,7 @@ public class ServletRegistration implements javax.servlet.ServletRegistration, j
             }
 
             @Override
-            public javax.servlet.ServletContext getServletContext() {
+            public jakarta.servlet.ServletContext getServletContext() {
                 return ServletRegistration.this.servletContext;
             }
 

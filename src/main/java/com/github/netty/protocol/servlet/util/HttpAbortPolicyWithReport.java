@@ -4,7 +4,7 @@ import com.github.netty.core.util.AbortPolicyWithReport;
 import com.github.netty.protocol.servlet.NettyMessageToServletRunnable;
 import com.github.netty.protocol.servlet.ServletHttpExchange;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**

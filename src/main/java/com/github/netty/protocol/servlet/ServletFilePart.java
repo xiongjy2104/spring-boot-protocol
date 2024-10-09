@@ -6,7 +6,7 @@ import com.github.netty.protocol.servlet.util.HttpHeaderConstants;
 import io.netty.buffer.ByteBufInputStream;
 import io.netty.handler.codec.http.multipart.FileUpload;
 
-import javax.servlet.http.Part;
+import jakarta.servlet.http.Part;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;

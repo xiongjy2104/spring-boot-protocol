@@ -6,7 +6,7 @@ import io.netty.handler.stream.*;
 import io.netty.util.concurrent.GenericFutureListener;
 import io.netty.util.concurrent.GenericProgressiveFutureListener;
 
-import javax.servlet.ServletOutputStream;
+import jakarta.servlet.ServletOutputStream;
 import java.io.Closeable;
 import java.io.File;
 import java.io.Flushable;

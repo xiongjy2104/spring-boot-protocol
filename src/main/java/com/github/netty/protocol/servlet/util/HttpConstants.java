@@ -38,7 +38,7 @@ public class HttpConstants {
     static {
         boolean existJavaxWebsocket;
         try {
-            Class.forName("javax.websocket.Endpoint");
+            Class.forName("jakarta.websocket.Endpoint");
             existJavaxWebsocket = true;
         } catch (Throwable e) {
             existJavaxWebsocket = false;

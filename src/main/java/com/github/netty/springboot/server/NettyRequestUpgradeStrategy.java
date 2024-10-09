@@ -28,11 +28,11 @@ import org.springframework.web.socket.server.HandshakeFailureException;
 import org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy;
 import org.springframework.web.socket.server.standard.ServerEndpointRegistration;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.websocket.Endpoint;
-import javax.websocket.Extension;
-import javax.websocket.WebSocketContainer;
-import javax.websocket.server.ServerEndpointConfig;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.websocket.Endpoint;
+import jakarta.websocket.Extension;
+import jakarta.websocket.WebSocketContainer;
+import jakarta.websocket.server.ServerEndpointConfig;
 import java.security.Principal;
 import java.util.*;
 

@@ -10,7 +10,7 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.handler.codec.http.HttpResponseStatus;
 
-import javax.servlet.http.Cookie;
+import jakarta.servlet.http.Cookie;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
@@ -24,7 +24,7 @@ import java.util.function.Consumer;
  * @author wangzihao
  * 2018/7/15/015
  */
-public class ServletHttpServletResponse implements javax.servlet.http.HttpServletResponse, Recyclable {
+public class ServletHttpServletResponse implements jakarta.servlet.http.HttpServletResponse, Recyclable {
     private static final Recycler<ServletHttpServletResponse> RECYCLER = new Recycler<>(ServletHttpServletResponse::new);
     private final ServletOutputStreamWrapper outputStream = new ServletOutputStreamWrapper(new CloseListener());
     private final NettyHttpResponse nettyResponse = new NettyHttpResponse();

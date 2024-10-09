@@ -9,10 +9,10 @@ import com.github.netty.protocol.servlet.util.ServletUtil;
 import io.netty.channel.*;
 import io.netty.handler.codec.http.HttpRequest;
 
-import javax.servlet.http.Cookie;
-import javax.websocket.Endpoint;
-import javax.websocket.Extension;
-import javax.websocket.server.ServerEndpointConfig;
+import jakarta.servlet.http.Cookie;
+import jakarta.websocket.Endpoint;
+import jakarta.websocket.Extension;
+import jakarta.websocket.server.ServerEndpointConfig;
 import java.nio.charset.Charset;
 import java.util.*;
 

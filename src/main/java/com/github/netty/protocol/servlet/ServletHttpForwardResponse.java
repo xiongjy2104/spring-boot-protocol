@@ -2,8 +2,8 @@ package com.github.netty.protocol.servlet;
 
 import com.github.netty.protocol.servlet.util.MediaType;
 
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletResponseWrapper;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;

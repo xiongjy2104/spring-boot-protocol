@@ -4,7 +4,7 @@
 
     <groupId>com.github.wangzihaogithub</groupId>
     <artifactId>spring-boot-protocol</artifactId>
-    <version>2.3.21</version>
+    <version>3.33.33</version>
     <packaging>jar</packaging>
 
     <name>Spring Boot Protocol</name>
@@ -24,18 +24,19 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- 编译时的编码 -->
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <java.version>1.8</java.version>
 
-        <spring-boot.version>2.7.18</spring-boot.version>
-        <servlet-api.version>4.0.1</servlet-api.version>
+        <spring-boot.version>3.1.2</spring-boot.version>
+        <servlet-api.version>6.0.0</servlet-api.version>
 
-        <javax-websocket-api.version>1.1</javax-websocket-api.version>
+        <jakarta-websocket-api.version>2.0.0</jakarta-websocket-api.version>
 
         <jackson.version>2.13.5</jackson.version>
         <netty.version>4.1.111.Final</netty.version>
         <netty.boringssl.version>2.0.53.Final</netty.boringssl.version>
         <fastjson.version>1.2.83</fastjson.version>
         <reactive-streams.version>1.0.3</reactive-streams.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <licenses>
@@ -62,12 +63,11 @@
     </developers>
 
     <dependencies>
+
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
             <version>${servlet-api.version}</version>
-            <!--            <scope>provided</scope>-->
-<!--            <optional>true</optional>-->
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.reactivestreams</groupId>-->
@@ -190,9 +190,9 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
-            <version>${javax-websocket-api.version}</version>
+            <groupId>jakarta.websocket</groupId>
+            <artifactId>jakarta.websocket-api</artifactId>
+            <version>${jakarta-websocket-api.version}</version>
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>
@@ -417,8 +417,6 @@
                     <version>3.5.1</version>
                     <configuration>
                         <encoding>UTF-8</encoding>
-                        <source>1.8</source>
-                        <target>1.8</target>
                     </configuration>
                     <dependencies>
                         <dependency>
@@ -521,8 +519,6 @@
                         <version>3.5.1</version>
                         <configuration>
                             <encoding>UTF-8</encoding>
-                            <source>1.8</source>
-                            <target>1.8</target>
                         </configuration>
                         <dependencies>
                             <dependency>

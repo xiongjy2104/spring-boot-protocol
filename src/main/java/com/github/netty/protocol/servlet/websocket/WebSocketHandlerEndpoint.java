@@ -4,7 +4,7 @@ import com.github.netty.core.util.LoggerFactoryX;
 import com.github.netty.core.util.LoggerX;
 import io.netty.util.internal.PlatformDependent;
 
-import javax.websocket.*;
+import jakarta.websocket.*;
 import java.nio.ByteBuffer;
 import java.util.Objects;
 

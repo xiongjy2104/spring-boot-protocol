@@ -8,7 +8,7 @@ import io.netty.buffer.Unpooled;
 import io.netty.handler.codec.DecoderResult;
 import io.netty.handler.codec.http.*;
 
-import javax.servlet.http.Cookie;
+import jakarta.servlet.http.Cookie;
 import java.io.Flushable;
 import java.util.List;
 import java.util.Locale;

@@ -2,8 +2,8 @@ package com.github.netty.protocol.servlet.util;
 
 import com.github.netty.core.util.AntPathMatcher;
 
-import javax.servlet.DispatcherType;
-import javax.servlet.ServletContext;
+import jakarta.servlet.DispatcherType;
+import jakarta.servlet.ServletContext;
 import java.util.*;
 
 /**
