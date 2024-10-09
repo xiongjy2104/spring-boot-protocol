@@ -192,13 +192,11 @@ public class ServletHttpServletResponse implements jakarta.servlet.http.HttpServ
         return encodeURL(url);
     }
 
-    @Override
     @Deprecated
     public String encodeUrl(String url) {
         return encodeURL(url);
     }
 
-    @Override
     @Deprecated
     public String encodeRedirectUrl(String url) {
         return encodeRedirectURL(url);
@@ -287,7 +285,6 @@ public class ServletHttpServletResponse implements jakarta.servlet.http.HttpServ
         }
     }
 
-    @Override
     @Deprecated
     public void setStatus(int sc, String sm) {
         nettyResponse.setStatus(new HttpResponseStatus(sc, sm));

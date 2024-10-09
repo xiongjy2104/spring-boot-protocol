@@ -831,7 +831,6 @@ public class ServletHttpServletRequest implements HttpServletRequest, Recyclable
         return isRequestedSessionIdFromUrl();
     }
 
-    @Override
     public boolean isRequestedSessionIdFromUrl() {
         getRequestedSessionId0();
         return sessionIdSource == SessionTrackingMode.URL;
@@ -1133,7 +1132,6 @@ public class ServletHttpServletRequest implements HttpServletRequest, Recyclable
         return getServletContext().getRequestDispatcher(path, getDispatcherType());
     }
 
-    @Override
     public String getRealPath(String path) {
         return getServletContext().getRealPath(path);
     }

@@ -460,7 +460,6 @@ public class ServletContext implements jakarta.servlet.ServletContext {
         return dispatcher;
     }
 
-    @Override
     public Servlet getServlet(String name) throws ServletException {
         ServletRegistration registration = servletRegistrationMap.get(name);
         if (registration == null) {
@@ -469,7 +468,6 @@ public class ServletContext implements jakarta.servlet.ServletContext {
         return registration.getServlet();
     }
 
-    @Override
     public Enumeration<Servlet> getServlets() {
         List<Servlet> list = new ArrayList<>();
         for (ServletRegistration registration : servletRegistrationMap.values()) {
@@ -478,7 +476,6 @@ public class ServletContext implements jakarta.servlet.ServletContext {
         return Collections.enumeration(list);
     }
 
-    @Override
     public Enumeration<String> getServletNames() {
         List<String> list = new ArrayList<>();
         for (ServletRegistration registration : servletRegistrationMap.values()) {
@@ -492,7 +489,6 @@ public class ServletContext implements jakarta.servlet.ServletContext {
         getLog().debug(msg);
     }
 
-    @Override
     public void log(Exception exception, String msg) {
         getLog().debug(msg, exception);
     }

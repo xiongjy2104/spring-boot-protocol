@@ -231,7 +231,6 @@ public class ServletHttpIncludeResponse extends HttpServletResponseWrapper {
      * description use <code>sendError(int, String)</code>.
      */
     @Deprecated
-    @Override
     public void setStatus(int sc, String msg) {
 
     }
