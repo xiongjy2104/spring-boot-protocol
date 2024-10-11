@@ -39,7 +39,7 @@ import java.util.function.Supplier;
 public class ServletContext implements jakarta.servlet.ServletContext {
     public static final int MIN_FILE_SIZE_THRESHOLD = 16384;
     public static final String DEFAULT_UPLOAD_DIR = "/upload";
-    public static final String SERVER_CONTAINER_SERVLET_CONTEXT_ATTRIBUTE = "javax.websocket.server.ServerContainer";
+    public static final String SERVER_CONTAINER_SERVLET_CONTEXT_ATTRIBUTE = "jakarta.websocket.server.ServerContainer";
     private static final List<ServletContext> INSTANCE_LIST = Collections.synchronizedList(new ArrayList<>(2));
     //    private final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
     private final ServletErrorPageManager servletErrorPageManager = new ServletErrorPageManager();
