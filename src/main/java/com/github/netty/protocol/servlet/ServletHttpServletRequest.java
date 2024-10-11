@@ -1206,18 +1206,34 @@ public class ServletHttpServletRequest implements HttpServletRequest, Recyclable
 
     @Override
     public String getRequestId() {
-        return this.getRequestedSessionId();
+        return this.asyncContext.getRequest().getRequestId();
     }
 
     @Override
     public String getProtocolRequestId() {
-        return this.getRequestedSessionId();
+        return this.getHttpExchange().getHttpSession().getId();
     }
 
     @Override
     public ServletConnection getServletConnection() {
         return null;
     }
+
+//    @Override
+//    public String getRequestId() {
+//        return httpExchange.getRequest().getRequestId();
+//    }
+//
+//    @Override
+//    public String getProtocolRequestId() {
+//        return httpExchange.getConnection().getProtocolRequestId();
+//    }
+//
+//    @Override
+//    public ServletConnection getServletConnection() {
+//        String connectionId = Long.toString(httpExchange.getConnection().getId());
+//        return new ServletConnectionImpl(connectionId, httpExchange.getProtocol().toString(), isSecure());
+//    }
 
     void setDispatcherType(DispatcherType dispatcherType) {
         this.dispatcherType = dispatcherType;

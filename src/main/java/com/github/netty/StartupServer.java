@@ -11,11 +11,18 @@ import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.WriteBufferWaterMark;
 import io.netty.util.ResourceLeakDetector;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.TreeSet;
 
 /**
@@ -224,4 +231,31 @@ public class StartupServer extends AbstractNettyServer {
         this.dynamicProtocolChannelHandler = dynamicProtocolChannelHandler;
     }
 
+    public static void main(String[] args) {
+        StartupServer startupServer = new StartupServer(8080);
+        List<AbstractProtocol> protocols = new ArrayList<>();
+        protocols.add(newHttpServletProtocol());
+        for (AbstractProtocol protocol : protocols) {
+            startupServer.getProtocolHandlers().add(protocol);
+            startupServer.getServerListeners().add(protocol);
+        }
+        startupServer.start();
+    }
+
+    private static HttpServletProtocol newHttpServletProtocol() {
+        ServletContext servletContext = new ServletContext();
+        servletContext.addServlet("myHttpServlet", new MyHttpServlet())
+                .addMapping("/test/sayHello");
+
+        HttpServletProtocol protocol = new HttpServletProtocol(servletContext);
+        protocol.setMaxBufferBytes(1024 * 1024);//The upper limit of the output stream buffer each connection, good speed write large dots. (Bytes. 1M)
+        return protocol;
+    }
+}
+
+class MyHttpServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.getWriter().write("hi! doGet");
+    }
 }

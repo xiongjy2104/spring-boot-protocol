@@ -78,10 +78,9 @@ public class ServletHttpSession implements HttpSession, Wrapper<Session> {
         maxInactiveInterval = interval;
     }
 
-//    @Override
-//    public HttpSessionContext getSessionContext() {
-//        return null;
-//    }
+    public ServletContext getSessionContext() {
+        return servletContext;
+    }
 
     @Override
     public Object getAttribute(String name) {
